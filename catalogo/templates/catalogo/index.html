@@ -1,0 +1,9 @@
+{% extends 'catalogo/base.html' %}
+
+{% block title %}Início - Minha Confeitaria{% endblock %}
+
+{% block content %}
+<h2>Bem-vindo à Minha Confeitaria!</h2>
+<p>Cadastre e organize os bolos da confeitaria.</p>
+<a class="botao" href="{% url 'catalogo:lista_bolos' %}">Ver lista de bolos</a>
+{% endblock %}

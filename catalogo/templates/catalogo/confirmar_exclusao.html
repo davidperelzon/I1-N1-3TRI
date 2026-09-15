@@ -1,0 +1,14 @@
+{% extends 'catalogo/base.html' %}
+
+{% block title %}Apagar Bolo - Minha Confeitaria{% endblock %}
+
+{% block content %}
+<h2>Confirmar exclusão</h2>
+<p>Tem certeza que deseja apagar o bolo <strong>{{ bolo.nome }}</strong>?</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button class="botao apagar" type="submit">Sim, quero apagar</button>
+    <a href="{% url 'catalogo:detalhe_bolo' bolo.pk %}">Cancelar</a>
+</form>
+{% endblock %}
