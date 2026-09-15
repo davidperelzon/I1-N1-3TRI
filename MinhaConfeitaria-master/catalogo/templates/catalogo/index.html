@@ -1,0 +1,10 @@
+{% extends 'catalogo/base.html' %}
+
+{% block title %}Minha Confeitaria{% endblock %}
+
+{% block content %}
+<h2>Catálogo da Confeitaria</h2>
+<p>Bem-vindo à Minha Confeitaria.</p>
+<p><a href="{% url 'catalogo:lista_bolos' %}">Ver bolos</a></p>
+<p><a href="{% url 'catalogo:novo_bolo' %}">Cadastrar novo bolo</a></p>
+{% endblock %}

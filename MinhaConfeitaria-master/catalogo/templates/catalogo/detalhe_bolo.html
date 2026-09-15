@@ -1,0 +1,21 @@
+{% extends 'catalogo/base.html' %}
+
+{% block title %}Detalhes: {{ bolo.nome }}{% endblock %}
+
+{% block content %}
+<h2>{{ bolo.nome }}</h2>
+<p><strong>Ingredientes:</strong> {{ bolo.ingredientes }}</p>
+<p><strong>Preço:</strong> R$ {{ bolo.preco }}</p>
+<p><strong>Sabor:</strong> {{ bolo.sabor }}</p>
+<p><strong>Disponibilidade:</strong>
+{% if bolo.disponivel %}
+    Disponível
+{% else %}
+    Indisponível
+{% endif %}
+</p>
+
+<a href="{% url 'catalogo:editar_bolo' bolo.pk %}">Editar Bolo</a>
+<a href="{% url 'catalogo:apagar_bolo' bolo.pk %}">Apagar Bolo</a>
+<p><a href="{% url 'catalogo:lista_bolos' %}">Voltar para a lista</a></p>
+{% endblock %}

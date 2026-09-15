@@ -1,0 +1,14 @@
+{% extends 'catalogo/base.html' %}
+
+{% block title %}Apagar Bolo{% endblock %}
+
+{% block content %}
+<h2>Tem certeza que deseja apagar "{{ bolo.nome }}"?</h2>
+<p>Esta ação não pode ser desfeita.</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Sim, quero apagar</button>
+    <a href="{% url 'catalogo:detalhe_bolo' bolo.pk %}">Cancelar</a>
+</form>
+{% endblock %}

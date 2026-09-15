@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Minha Confeitaria{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'catalogo/style.css' %}">
+</head>
+<body>
+    <h1><a href="{% url 'catalogo:home' %}">Minha Confeitaria</a></h1>
+    <p>
+        <a href="{% url 'catalogo:lista_bolos' %}">Lista de Bolos</a> |
+        <a href="{% url 'catalogo:novo_bolo' %}">Cadastrar Bolo</a>
+    </p>
+    {% block content %}{% endblock %}
+</body>
+</html>

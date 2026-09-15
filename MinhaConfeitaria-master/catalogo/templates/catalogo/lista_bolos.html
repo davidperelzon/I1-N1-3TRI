@@ -1,0 +1,24 @@
+{% extends 'catalogo/base.html' %}
+
+{% block title %}Lista de Bolos{% endblock %}
+
+{% block content %}
+<h2>Lista de Bolos</h2>
+
+{% if bolos %}
+<ul>
+    {% for bolo in bolos %}
+    <li>
+        <a href="{% url 'catalogo:detalhe_bolo' bolo.pk %}">
+            <strong>{{ bolo.nome }}</strong>
+        </a>
+        - {{ bolo.sabor }} - R$ {{ bolo.preco }}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Nenhum bolo cadastrado.</p>
+{% endif %}
+
+<p><a href="{% url 'catalogo:novo_bolo' %}">Cadastrar novo bolo</a></p>
+{% endblock %}
